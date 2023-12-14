@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="index.css">
+
   <title>FlyShare | Login & Registration</title>
 </head>
 
 <body>
   <button class="go-top-btn">
     <img src="images/scroll.png" alt="arrow up">
-</button>
+  </button>
   <div class="wrapper">
     <nav class="nav">
       <div class="nav-logo">
@@ -22,15 +23,21 @@
       <div class="nav-menu" id="navMenu">
         <ul>
           <li><a href="#" class="link">Home</a></li>
-          <li><a href="#" class="link">About</a></li>
-          <li><a href="#" class="link">Benefits</a></li>
-          <li><a href="#" class="link">Contact</a></li>
+          <li><a href="#about" class="link">About</a></li>
+          <li><a href="#benefits" class="link">Benefits</a></li>
+          <li><a href="#contact1" class="link">Contact</a></li>
+          <!-- <li><a href="signup.html" class="link">Signup</a></li>
+          <li><a href="login.html" class="link">Login</a></li> -->
         </ul>
       </div>
-      <div class="nav-button">
-        <button class="btn white-btn"  onclick="window.location.href='signup.html'">Sign up</button>
-        <button class="btn white-btn"  onclick="window.location.href='login.html'">Login</button>
-     
+
+      <div class="nav-button" id="navButton">
+        <button class="btn white-btn" onclick="window.location.href='signup.html'">Sign up</button>
+        <button class="btn white-btn" onclick="window.location.href='login.html'">Login</button>
+
+      </div>
+      <div class="nav-button-btn1">
+        <i class="fa-solid fa-user" onclick="myUserFunction()()"></i>
       </div>
       <div class="nav-menu-btn">
         <i class="bx bx-menu" onclick="myMenuFunction()"></i>
@@ -45,7 +52,8 @@
         ensuring worry-free trips."</p>
     </div>
   </div>
-  <div class="mvv-container">
+  <div class="mvv-container" id="about">
+    <!-- <h1> ABOUT US</h1> -->
     <div class="mvv-block">
       <div class="image">
         <img src="images/share.png" alt="">
@@ -105,9 +113,7 @@
     </div>
   </div>
 
-  <div class="wrapper1">
-
-
+  <div class="wrapper1" id="benefits">
     <h1>Benefits</h1>
     <!-- <p>Bag Buddy promotes a sense of collaboration among travelers,<br> encouraging a more sustainable and efficient use of luggage space </p> -->
     <div class="content-box">
@@ -157,21 +163,23 @@
       </div>
     </div>
   </div>
-  <section class="contact-main">
-    <!-- <div class="contact-main-text">
+  <div class="contact-main" id="contact1">
+    <div class="contact-main-text">
       <h1>Our teams are here to help</h1>
       <p>
         Get in touch and let us know how we can help. We’ll help you combine
         the flexibility of the modern web with the control and compliance your
         business needs.
       </p>
-      <a href="#contact">Need help?</a>
-    </div> -->
-  </section>
+          <a href="#contact">Need help?</a>
+    </div>
 
-  <section class="contact-form" id="contact">
+  </div>
+
+  <div class="contact-form" id="contact">
     <h1>Contact our team directly</h1>
-    <form action="https://formsubmit.co/3c8b0efbdd8eccc2a6cbbbf3edbfd0a6 " method="POST">
+    <form>
+      <!-- <form action="https://formsubmit.co/3c8b0efbdd8eccc2a6cbbbf3edbfd0a6 " method="POST"> -->
       <input type="text" name="fname" placeholder="First name" required />
       <input type="text" name="lname" placeholder="Last name" required />
       <input type="email" name="email" placeholder="Email address" required />
@@ -181,31 +189,38 @@
 
       <button type="submit">Submit</button>
     </form>
-  </section>
+  </div>
   <div class="copyright">
     &copy; All rights reserved by FlyShare && Made with &hearts; by SRAVYA
   </div>
+  <!-- </div> -->
+
 
   <a href="#" class="to-top">
     <i class="fas fa-chevron-up"></i>
-</a>
-<script src="index.js"></script>
+  </a>
+  <script src="index.js"></script>
 
+  <script>
+    function myUserFunction() {
+      var navButton = document.getElementById("navButton");
 
+      navButton.classList.toggle("responsive");
+    }
+  </script>
 
   <script>
 
     function myMenuFunction() {
       var i = document.getElementById("navMenu");
-      // var j= document.getElementById("navButton");
 
-      if (i.className === "nav-menu" ) {
+      if (i.className === "nav-menu") {
         i.className += " responsive";
-        // j.className += " responsive"
-        
+
+
       } else {
         i.className = "nav-menu";
-        // j.className = " nav-button"; 
+
       }
     }
 
@@ -237,6 +252,7 @@
     }
 
   </script>
+
 
 </body>
 
